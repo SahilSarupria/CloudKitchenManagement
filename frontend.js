@@ -156,7 +156,7 @@ async function signIn(event) {
     const password = document.getElementById('signin-password').value;
 
     try {
-        const response = await fetch('http://localhost:3000/signin', {
+        const response = await fetch('mysql://avnadmin:AVNS_-uHGt7At2jCqPOz_VII@mysql-8e29e85-cloudkitchen-01.k.aivencloud.com:19129/defaultdb?ssl-mode=REQUIRED', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -187,7 +187,7 @@ async function signUp(event) {
     const email = document.getElementById('signup-email').value;
 
     try {
-        const response = await fetch('http://localhost:3000/signup', {
+        const response = await fetch('mysql://avnadmin:AVNS_-uHGt7At2jCqPOz_VII@mysql-8e29e85-cloudkitchen-01.k.aivencloud.com:19129/defaultdb?ssl-mode=REQUIRED', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
