@@ -1,0 +1,90 @@
+/* public/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    position: relative; /* To position the global button */
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.card .price {
+    font-size: 1.2em;
+    color: #e67e22;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.card button:hover {
+    background-color: #2980b9;
+}
+
+/* Global Place Order Button */
+.global-place-order {
+    position: fixed;
+    top: 20px;
+    right: 30px;  /* Move it slightly to the right */
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;  /* Reduced padding to shrink the button size */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;  /* Slightly reduced font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.global-place-order:hover {
+    background-color: #2ecc71;
+}
+
+.card input[type="number"] {
+    width: 50%; /* Reduce the width of the input to 50% */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+    padding: 5px; /* Add some padding for better aesthetics */
+    font-size: 14px; /* Adjust font size if needed */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    border-radius: 4px; /* Optional: Rounded corners */
+}
