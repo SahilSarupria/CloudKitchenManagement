@@ -1,0 +1,14 @@
+{
+  "name": "CloudKitchenManagement",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.0.0"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
