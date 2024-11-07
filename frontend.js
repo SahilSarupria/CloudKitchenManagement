@@ -156,7 +156,7 @@ async function signIn(event) {
     const password = document.getElementById('signin-password').value;
 
     try {
-        const response = await fetch('mysql://avnadmin:AVNS_-uHGt7At2jCqPOz_VII@mysql-8e29e85-cloudkitchen-01.k.aivencloud.com:19129/cloud_kitchen_management?ssl-mode=REQUIRED', {
+        const response = await fetch('mysql://avnadmin:AVNS_-uHGt7At2jCqPOz_VII@mysql-8e29e85-cloudkitchen-01.k.aivencloud.com:19129/cloud_kitchen_management?ssl-mode=REQUIRED'), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -187,7 +187,7 @@ async function signUp(event) {
     const email = document.getElementById('signup-email').value;
 
     try {
-        const response = await fetch('mysql://avnadmin:AVNS_-uHGt7At2jCqPOz_VII@mysql-8e29e85-cloudkitchen-01.k.aivencloud.com:19129/cloud_kitchen_management?ssl-mode=REQUIRED', {
+        const response = await fetch('mysql://avnadmin:AVNS_-uHGt7At2jCqPOz_VII@mysql-8e29e85-cloudkitchen-01.k.aivencloud.com:19129/cloud_kitchen_management?ssl-mode=REQUIRED'), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
