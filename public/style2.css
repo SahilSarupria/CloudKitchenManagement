@@ -1,0 +1,352 @@
+h1 {
+    font-size: 50px;
+    margin: 0;
+    margin-left: 100px;
+    margin-top: 30px;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #161616;
+    position: relative;
+}
+
+/* Container for cards */
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    perspective: 1000px; /* Perspective for the 3D flip effect */
+}
+
+/* Card container styling remains the same */
+.card {
+    background-color: #515050;
+    border: 0px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    height: 350px; /* Fixed height for consistent flipping */
+    margin: 10px;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d; /* Allows for 3D transformations */
+    position: relative; /* Necessary for absolute positioning of the back face */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: flex-start; /* Align text to the top */
+    align-items: left; /* Center the items horizontally */
+    perspective: 1000px; /* Perspective for the flip effect */
+}
+
+/* Front face of the card */
+.card .card-front,
+.card .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 2; /* Places content above the image */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background for better text visibility */
+}
+
+/* Ensure card text is readable over the image */
+.card h3,
+.card p,
+.card .price,
+.card button {
+    z-index: 3; /* Keeps the text and button above the overlay */
+}
+
+/* Front face content */
+.card .card-front {
+    background-color: #515050;
+    justify-content: flex-end;
+}
+
+/* Back face content */
+.card .card-back {
+    background-color: #3e3e3e;
+    transform: rotateY(180deg); /* Rotate back face 180 degrees */
+    color: #ffffff;
+}
+
+/* Flip effect on hover */
+.card:hover {
+    transform: rotateY(180deg); /* Flip the card on the Y-axis */
+}
+
+/* Image styling */
+/* Image fills the card */
+/* Image fills the entire card */
+.card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the card without distortion */
+    border: none;
+    border-radius: 10px; /* Keeps the rounded corners */
+    z-index: -1; /* Places the image behind the content */
+    margin: 0; /* Removes any potential margin around the image */
+    padding: 0; /* Ensures no padding is applied */
+    box-sizing: border-box; /* Ensures the image respects the card's dimensions */
+}
+
+
+/* Text styles */
+.card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.card p {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin: 0 0 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Price styles */
+.card .price {
+    font-size: 1.2em;
+    color: #04d41c;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Button styles */
+.card button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.card button:hover {
+    background-color: #2980b9;
+}
+
+/* Number input styling */
+.card input[type="number"] {
+    background-color: #515050;
+    color: #ffffff;
+    border: none;
+    padding: 5px 8px;
+    font-size: 1em;
+    border-radius: 4px;
+    text-align: center;
+    width: auto;
+    min-width: 50px;
+    max-width: 100px;
+    transition: width 0.2s ease, background-color 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+.card input[type="number"]:focus {
+    background-color: #6d6d6d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 80px;
+    padding: 5px;
+}
+
+
+
+/* Rest of the CSS remains the same */
+.global-place-order {
+    position: fixed;
+    top: 40px;
+    right: 350px;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.global-place-order:hover {
+    background-color: #2ecc71;
+}
+
+/* Other global buttons and modal styles... */
+
+
+.global-logout {
+    position: fixed;
+    top: 40px;
+    right: 100px;  
+    background-color: #ae2727;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;  
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.global-logout:hover {
+    background-color: #cc2e2e;
+}
+
+.global-view-cart {
+    position: fixed;
+    top: 40px;
+    right: 215px;  
+    background-color: #2776ae;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;  
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.global-view-cart:hover {
+    background-color: #2eb2cc;
+}
+
+.card input[type="number"] {
+    background-color: #515050; /* Match the card's background color */
+    color: #ffffff; /* White text to contrast the dark background */
+    border: none; /* Remove border for a seamless look */
+    padding: 5px 8px; /* Add padding for better usability */
+    font-size: 1em; /* Consistent font size */
+    border-radius: 4px; /* Slightly rounded corners */
+    text-align: center; /* Center-align the text */
+    width: auto; /* Allow the width to adjust automatically */
+    min-width: 50px; /* Ensure a minimum width */
+    max-width: 100px; /* Limit the maximum width */
+    transition: width 0.2s ease, background-color 0.3s ease; /* Smooth transitions */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.card input[type="number"]:focus {
+    background-color: #6d6d6d; /* Slightly lighter background on focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for focus */
+    width: 80px; /* Slightly expand width on focus for easier input */
+}
+
+
+.cart-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #515050; /* Match the card's background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    width: 90%;
+    max-width: 500px;
+    z-index: 1000;
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.cart-modal h2 {
+    font-size: 1.8em;
+    color: #04d41c; /* Match the price text color */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #6d6d6d; /* Add a separator for aesthetics */
+    padding-bottom: 10px;
+}
+
+.cart-items {
+    text-align: left;
+    margin: 20px 0;
+    background-color: #6d6d6d; /* Slightly lighter than the modal background */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-height: 200px; /* Ensure a scrollable container for long lists */
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item p {
+    font-size: 1em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.cart-item .price {
+    font-weight: bold;
+    color: #04d41c; /* Match the price color on cards */
+}
+
+.close-cart {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.close-cart:hover {
+    background-color: #c0392b;
+}
+
+/* Add smooth scrollbar for the items list */
+.cart-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover {
+    background-color: #2980b9;
+}
+

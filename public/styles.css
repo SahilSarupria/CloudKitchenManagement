@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Card Container */
+#checkout-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Card */
+#checkout-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Title */
+#checkout-container h1 {
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Cart Summary Section */
+#cart-summary {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #ffffff;
+    padding: 10px;
+    background-color: #363636;
+    border: 0px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Cart Summary Titles */
+#cart-summary h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Form Styles */
+#checkout-form label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#checkout-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #3f3f3f;
+    outline: none;
+}
+
+#checkout-form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Place Order Button */
+.place-order-button {
+    display: block;
+    width: 100%;
+    background-color: #27ae60;
+    color: #00f3df;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.place-order-button:hover {
+    background-color: #2ecc71;
+    transform: scale(1.03);
+}

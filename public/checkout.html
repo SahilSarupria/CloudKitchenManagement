@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="checkout-container">
+        <h1>Checkout</h1>
+        <div id="cart-summary"></div>
+        <form id="checkout-form">
+            <label for="address">Select Address:</label>
+            <select id="address" required>
+                <option value="" disabled selected>Select your address</option>
+                <option value="work">Work</option>
+                <option value="home">Home</option>
+            </select>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+    <script src="checkout2.js"></script>
+</body>
+</html>

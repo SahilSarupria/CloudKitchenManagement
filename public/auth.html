@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User Authentication</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+	<div id="auth-forms">
+		<div id="signin-form">
+			<h2>Sign In</h2>
+			<form onsubmit="return signIn(event)">
+				<label for="signin-username">Username:</label>
+				<input type="text" id="signin-username" required>
+
+				<label for="signin-password">Password:</label>
+				<div class="password-container">
+					<input type="password" id="signin-password" required>
+					<span class="password-toggle" onclick="togglePassword('signin-password', 'signin-toggle')">👁️</span>
+				</div>
+
+				<button type="submit">Sign In</button>
+			</form>
+			<div class="toggle">
+				Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a>
+			</div>
+		</div>
+
+		<div id="signup-form" style="display: none;">
+			<h2>Sign Up</h2>
+			<form onsubmit="return signUp(event)">
+				<label for="signup-username">Username:</label>
+				<input type="text" id="signup-username" required>
+
+				<label for="signup-password">Password:</label>
+				<div class="password-container">
+					<input type="password" id="signup-password" required>
+					<span class="password-toggle" onclick="togglePassword('signup-password', 'signup-toggle')">👁️</span>
+				</div>
+
+				<label for="signup-mobile">Mobile Number:</label>
+				<input type="tel" id="signup-mobile" required>
+
+				<label for="signup-email">Email:</label>
+				<input type="email" id="signup-email" required>
+
+				<button type="submit">Sign Up</button>
+			</form>
+			<div class="toggle">
+				Already have an account? <a href="#" onclick="toggleForms()">Sign In</a>
+			</div>
+		</div>
+		<div id="message" class="error"></div>
+	</div>
+</div>
+
+<script src="frontend.js"></script>
+</body>
+</html>
